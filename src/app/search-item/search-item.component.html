@@ -1,0 +1,21 @@
+<div class="app-search-item">
+  <div class="row">
+    
+    <div class="flight-details" *ngIf = "searchForm.return_date">
+      <small class="flight-op-name">{{flight.airline}}</small>
+      <span>PNQ > DEL</span>
+      <span>Depart: 10.00AM</span>
+      <span>Arrive: 10.00AM</span>
+    </div>
+    <div class="flight-details" [ngClass]="{'col-8': !searchForm.return_date }">
+      <small class="flight-op-name">{{flight.airline}}</small>
+      <span>PNQ < DEL</span>
+      <span>Depart: 10.00AM</span>
+      <span>Arrive: 10.00AM</span>
+    </div>
+    <div class="book-btn" [ngClass]="{'col-2': !searchForm.return_date }">
+      <div class="img" alt="flight"></div>
+      <button>Book this flight</button>
+    </div>
+  </div>
+</div>

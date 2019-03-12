@@ -1,0 +1,4 @@
+<div id="slidecontainer">
+    <small class="min">{{min}}</small><small class="max">{{max}}</small>
+      <input type="range" [min]="min" [max]="max" [(ngModel)]="value" (ngModelChange)="chnageFilter()" class="slider" id="myRange">
+    </div>

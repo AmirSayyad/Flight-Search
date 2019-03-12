@@ -1,0 +1,35 @@
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #003399;
+}
+header{
+    padding: 0px 10px;
+    color: #003399;
+}
+.left, .right{
+    height: 10px;
+    display: inline-block;
+}
+.left{
+    background-color: #003399;
+    width: 70%;
+}
+.right{
+    background-color: #009ee6;
+    width: 30%;
+    position: relative;
+}
+.right::after{
+    z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -5px;
+    display: block;
+    width: 10px;
+    background: #fff;
+    -webkit-transform: skew(20deg);
+    transform: skew(-30deg);
+}

@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+html, body, app-root, app-home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    overflow: hidden;
+    margin:0;
+}
+body {
+    margin: 0px;
+}
+body * {
+    box-sizing: border-box;
+}
+.row{
+    display: flex;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 0px;
+    border-bottom: 1px solid #d3dbea;
+    outline: none;
+}
+.form-inut {
+    width: 100%;
+    display: block;
+}
+h3.price {
+    margin: 8px 0;
+    font-size: 1.5rem;
+}
+app-home{
+    background-image: url('/assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+app-home::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(47, 103, 177, 0.6);
+}
+@media (max-width: 700px) {
+    
+    .app-home {
+        width: 100% !important;
+    }
+    .app-home app-form-component.form-inut, .app-home .form-item{
+        margin: 0px !important;
+        border: 0px !important;
+    }
+    
+	.search-form-group {
+		display: grid !important;
+    }
+    .app-content {
+        overflow: scroll;
+    }
+    .dash-body{
+        display: block !important;
+    }
+    .sidebar, .sidebar-body {
+        position: unset !important;
+        width: 100% !important;
+    }
+    .flight-date {
+        width: 40% !important;
+    }
+    .flight-src {
+        width: 60% !important;
+        font-size: 20px !important;
+    }
+    .flight-details.col-2 {
+        width: 60% !important;
+    }
+}

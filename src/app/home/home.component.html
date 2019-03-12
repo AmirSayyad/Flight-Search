@@ -1,0 +1,23 @@
+<div class="app-body" id="app-home-body">
+  <div class="app-home">
+    <div class="grid">
+      <div class=" search-form ">
+        <div class="search-title">
+          {{quote}}
+          <br>
+          <small>Book with us.</small>
+        </div>
+        <div class="search-form-group">
+          <app-form-component class="form-inut" placeholder="Enter Origin City" [autocomplete]="airports" [value]="searchForm.source"
+            (inputChange)="searchForm.source=$event"></app-form-component>
+          <app-form-component class="form-inut" placeholder="Enter Destination City" [autocomplete]="airports" [value]="searchForm.destination"
+            (inputChange)="searchForm.destination=$event"></app-form-component>
+          <div class="form-item">
+            <input type="date" name="" [(ngModel)]="searchForm.departure_date" placeholder="">
+          </div>
+          <button type="submit" class="form-button" (click)="search()"><b>search</b></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

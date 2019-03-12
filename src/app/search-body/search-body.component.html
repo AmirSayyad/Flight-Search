@@ -1,0 +1,34 @@
+<div class="app-search-body"> 
+  <div class="breadcrumb">
+    <span class="flight-src" *ngIf="searchResult.single">{{searchResult.src}} > {{searchResult.dest}} </span>
+    <span class="flight-src" *ngIf="searchResult.return">{{searchResult.src}} > {{searchResult.dest}} > {{searchResult.src}}</span>
+		
+		<span class="flight-date" *ngIf="searchResult.single">
+      Depart: {{searchSVC.searchForm.departure_date}}
+		</span>
+		<span class="flight-date" *ngIf="searchResult.return">
+      Depart: {{searchSVC.searchForm.departure_date}}
+      Return: {{searchSVC. searchForm.departure_date}}
+		</span>
+		<!--pre>{{ searchResult | json}}</pre-->
+	</div>
+	
+	<div class="flights">
+		<div class="single" *ngIf="searchResult.single"> 
+			<app-search-item *ngFor="let single of searchResult.single" [flight]="single"></app-search-item>	
+			<div *ngIf="searchResult.single.length==0" class="title">
+				<i class="material-icons">airplanemode_inactive</i>
+				<br>
+				No FLights Available
+			</div>
+		</div>
+		<div class="single" *ngIf="searchResult.return"> 
+			<app-search-item *ngFor="let return of searchResult.return" [flight]="return"></app-search-item>	
+			<div *ngIf="searchResult.return.length==0" class="title">
+				<i class="material-icons">airplanemode_inactive</i>
+				<br>
+				No FLights Available
+			</div>
+		</div>
+	</div>
+</div>

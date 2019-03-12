@@ -1,0 +1,63 @@
+<div class="app-search-sidebar">
+  <div class="tabset">
+    <!-- Tab 1 -->
+    <input type="radio" name="tabset" id="tab1" aria-controls="single" checked>
+    <label for="tab1">Single</label>
+    <!-- Tab 2 -->
+    <input type="radio" name="tabset" id="tab2" aria-controls="return">
+    <label for="tab2">Return</label>
+
+    <div class="tab-panels">
+      <section id="single" class="tab-panel">
+        <input class="tab-radio" type="radio" name="tabs" id="tab1" checked />
+        <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+          <label>Origin City</label>
+          <app-form-component class="form-inut" placeholder="Enter Origin City" [autocomplete]="airports"
+            [value]="searchForm.source" (inputChange)="searchForm.source=$event"></app-form-component>
+          <label>Destination City</label>
+          <app-form-component class="form-inut" placeholder="Enter Destination City" [autocomplete]="airports"
+            [value]="searchForm.destination" (inputChange)="searchForm.destination=$event"></app-form-component>
+          <div class="form-input">
+            <label>Departure Date</label>
+            <input type="date" name="" [(ngModel)]="searchForm.departure_date" placeholder="Departure Date">
+          </div>
+          <div class="form-input">
+            <label>Number of Passengers</label>
+            <input type="number" name="" [(ngModel)]="searchForm.no_of_passengers" placeholder="Number of Passengers">
+          </div>
+
+          <button type="submit" (click)="search(true)" class="form-button">Search</button>
+
+          <app-filter [min]="min" [max]="max" (valueChanged)="valueChanged($event)"></app-filter>
+        </div>
+      </section>
+      <section id="return" class="tab-panel">
+        <input class="tab-radio" type="radio" name="tabs" id="tab2" />
+        <div id="tab-content2" class="tab-content" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+          <label>Origin City</label>
+          <app-form-component class="form-inut" placeholder="Enter Origin City" [autocomplete]="airports"
+            [value]="searchForm.source" (inputChange)="searchForm.source=$event"></app-form-component>
+          <label>Destination City</label>
+          <app-form-component class="form-inut" placeholder="Enter Destination City" [autocomplete]="airports"
+            [value]="searchForm.destination" (inputChange)="searchForm.destination=$event"></app-form-component>
+          <div class="form-input">
+            <label>Departure Date</label>
+            <input type="date" name="" [(ngModel)]="searchForm.departure_date" placeholder="Departure Date">
+          </div>
+          <div class="form-input">
+            <label>Return Date</label>
+            <input type="date" name="" [(ngModel)]="searchForm.return_date" placeholder="Return Date">
+          </div>
+
+          <div class="form-input">
+            <label>Number of Passengers</label>
+            <input type="number" placeholder="Number of Passengers" name="" [(ngModel)]="searchForm.no_of_passengers">
+          </div>
+
+          <button type="submit" (click)="search()" class="form-button">Search</button>
+          <app-filter [min]="min" [max]="max" (valueChanged)="valueChanged($event)"></app-filter>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
